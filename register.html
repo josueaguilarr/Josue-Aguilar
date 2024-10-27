@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Burben</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./public/css/global.css">
+    <script type="module" src="./public/js/validationRegisterForm.js"></script>
+</head>
+
+<body>
+    <main class="flex justify-content-center align-items-center my-5">
+        <div class="w-75 mx-auto">
+            <h1 class="fw-bold text-center mb-5">Registro de usuario</h1>
+
+            <form class="row g-3 needs-validation" novalidate id="register-form">
+
+                <div class="col-md-4">
+                    <label for="name" class="form-label required-input required-input">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" required pattern="[A-Za-zÀ-ÿ\s]{2,}">
+                    <div class="invalid-feedback">
+                        El nombre es requerido.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="phone" class="form-label required-input">Teléfono <small
+                            class="text-secondary">(digitos)</small></label>
+                    <input type="tel" maxlength="10" class="form-control" name="phone" id="phone" required pattern="\d{10}">
+                    <div class="invalid-feedback">
+                        El teléfono es requerido.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="email" class="form-label required-input">Correo electrónico</label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                    <div class="invalid-feedback">
+                        El correo electrónico es requerido.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="password" class="form-label required-input">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password" required pattern=".{8,}">
+                    <div class="invalid-feedback" id="feedback-password">
+                        Provee una contraseña valida de minimo 8 digitos.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="confirm-password" class="form-label required-input">Confirmar contraseña</label>
+                    <input type="password" class="form-control" id="confirm-password" required pattern=".{8,}">
+                    <div class="invalid-feedback" id="feedback-confirm-password">
+                        Provee una contraseña valida de minimo 8 digitos.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="rfc" class="form-label required-input">RFC</label>
+                    <input type="text" class="form-control" name="rfc" id="rfc" required
+                        pattern="^([A-Z]{4}[0-9]{6}[A-Z0-9]{3}|[A-Z]{3}[0-9]{6}[A-Z]{1}[A-Z0-9]{2})$">
+                    <div class="invalid-feedback">
+                        El RFC no cumple el formato correcto.
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                    <label for="notes" class="form-label required-input">Notas</label>
+                    <textarea class="form-control" rows="5" name="notes" id="notes" placeholder="Escribe tus notas aquí..."
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        Es requerimiento brindar notas del registro.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-success fw-bolder w-100" type="submit">Guardar</button>
+                    <p class="text-center mt-3">Ya tienes una cuenta?
+                        <a href="index.html">Inicia sesión</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>
